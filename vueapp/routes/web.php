@@ -11,23 +11,29 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome',
-        [
-            'title' => "An even cooler way to do the title"
-        ]
-    );
-});
+// Route::get('/', function () {
+//     return view('welcome',
+//         [
+//             'title' => "An even cooler way to do the title"
+//         ]
+//     );
+// });
 
-Route::get('/page', function () {
-    return view('page',
-        [
-            'title' => "Page 2 - A little about the Author",
-            'author' => json_encode([
-                "name" => "Fisayo Afolayan",
-                "role" => "Software Enginner",
-                "code" => "Always keeping it clean"
-            ])
-        ]
-    );
-});
+// Route::get('/page', function () {
+//     return view('page',
+//         [
+//             'title' => "Page 2 - A little about the Author",
+//             'author' => json_encode([
+//                 "name" => "Fisayo Afolayan",
+//                 "role" => "Software Enginner",
+//                 "code" => "Always keeping it clean"
+//             ])
+//         ]
+//     );
+// });
+
+
+Route::get('/{any}', function(){
+    return view('vueapp');
+})->where('any', '.*');
+
